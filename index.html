@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NDSL 復古掌機市場追蹤儀表板</title>
+    <title>NDSL vs PSP 復古掌機市場追蹤儀表板</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: 'Arial', sans-serif; padding: 20px; background-color: #f4f4f9; }
-        .container { max-width: 900px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #333; text-align: center; }
-        .summary { text-align: center; font-size: 1.2em; margin-bottom: 20px; color: #555; background: #e3f2fd; padding: 10px; border-radius: 4px; }
-        /* 設定圖表的高度與寬度比例 */
+        body { font-family: 'Arial', sans-serif; padding: 20px; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; }
+        
+        /* KPI 卡片區塊樣式 */
+        .kpi-container { display: flex; justify-content: space-around; margin-bottom: 20px; gap: 20px; }
+        .kpi-card { flex: 1; background: #e3f2fd; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .kpi-card.psp { background: #fce4ec; }
+        .kpi-card h2 { margin: 0 0 10px 0; font-size: 1.2em; color: #333; }
+        .kpi-data { font-size: 1.1em; line-height: 1.6; }
+        .kpi-data span { font-weight: bold; color: #d35400; font-size: 1.2em; }
+        
+        /* 圖表區塊樣式 */
         .chart-container { position: relative; height: 50vh; width: 100%; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>NDSL 二手市場行情追蹤儀表板</h1>
+    <h1>🎮 NDSL vs PSP 二手行情追蹤儀表板</h1>
     
-    <div class="summary" id="summary-text">資料載入中...</div>
+    <div class="kpi-container" id="kpi-section">
+        <div style="text-align:center; width:100%;">資料載入與計算中...</div>
+    </div>
     
     <div class="chart-container">
         <canvas id="priceChart"></canvas>
@@ -27,34 +37,83 @@
 </div>
 
 <script>
-    // 讀取 JSON 檔案 (強制更新快取)
+    // 讀取最新版的分類 JSON 檔案
     fetch('retro_consoles.json?t=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
-            // 1. 更新畫面上方的總筆數文字
-            document.getElementById('summary-text').innerHTML = `成功載入！目前共有 <strong>${data.length}</strong> 筆有效報價資料。`;
+            // 抓出兩款主機的陣列資料
+            const ndslData = data.NDSL || [];
+            const pspData = data.PSP || [];
             
-            // 2. 準備給圖表吃的資料格式
-            const labels = data.map((item, index) => `報價 ${index + 1}`); // X軸：報價 1, 報價 2...
-            const prices = data.map(item => item.price); // Y軸：純數字價格
-            const fullTitles = data.map(item => item.title); // 用來在滑鼠移過去時顯示完整標題
+            // --- 1. 計算 KPI 數據的自動化函數 ---
+            const calculateKPI = (items) => {
+                if (items.length === 0) return { avg: 0, max: 0, min: 0, count: 0 };
+                const prices = items.map(item => item.price);
+                const max = Math.max(...prices);
+                const min = Math.min(...prices);
+                const avg = Math.round(prices.reduce((a, b) => a + b, 0) / prices.length);
+                return { avg, max, min, count: items.length };
+            };
 
-            // 3. 開始繪製 Chart.js 圖表
+            const ndslKPI = calculateKPI(ndslData);
+            const pspKPI = calculateKPI(pspData);
+
+            // 將計算結果寫入 HTML 卡片中
+            document.getElementById('kpi-section').innerHTML = `
+                <div class="kpi-card">
+                    <h2>🟦 NDSL 數據總覽 (共 ${ndslKPI.count} 筆)</h2>
+                    <div class="kpi-data">
+                        平均價格：<span>$${ndslKPI.avg}</span><br>
+                        最高價格：<span>$${ndslKPI.max}</span><br>
+                        最低價格：<span>$${ndslKPI.min}</span>
+                    </div>
+                </div>
+                <div class="kpi-card psp">
+                    <h2>🟥 PSP 數據總覽 (共 ${pspKPI.count} 筆)</h2>
+                    <div class="kpi-data">
+                        平均價格：<span>$${pspKPI.avg}</span><br>
+                        最高價格：<span>$${pspKPI.max}</span><br>
+                        最低價格：<span>$${pspKPI.min}</span>
+                    </div>
+                </div>
+            `;
+
+            // --- 2. 繪製 Chart.js 雙線圖 ---
+            // 找出資料最多的長度來畫 X 軸
+            const maxLength = Math.max(ndslData.length, pspData.length);
+            const labels = Array.from({length: maxLength}, (_, i) => `報價 ${i + 1}`);
+
+            // 準備 tooltip 完整標題
+            const ndslTitles = ndslData.map(item => item.title);
+            const pspTitles = pspData.map(item => item.title);
+
             const ctx = document.getElementById('priceChart').getContext('2d');
             new Chart(ctx, {
-                type: 'line', // 設定圖表類型為折線圖
+                type: 'line',
                 data: {
                     labels: labels,
-                    datasets: [{
-                        label: 'NDSL 價格 (NT$)',
-                        data: prices,
-                        borderColor: '#4A90E2', // 折線的顏色 (科技藍)
-                        backgroundColor: 'rgba(74, 144, 226, 0.2)', // 折線下方的填滿顏色
-                        borderWidth: 2,
-                        pointRadius: 5, // 數據點的大小
-                        pointHoverRadius: 8, // 滑鼠移上去時數據點放大的大小
-                        tension: 0.3 // 讓線條呈現微彎的平滑曲線
-                    }]
+                    datasets: [
+                        {
+                            label: 'NDSL 價格 (NT$)',
+                            data: ndslData.map(item => item.price),
+                            borderColor: '#4A90E2',
+                            backgroundColor: 'rgba(74, 144, 226, 0.2)',
+                            borderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 7,
+                            tension: 0.3 // 平滑曲線
+                        },
+                        {
+                            label: 'PSP 價格 (NT$)',
+                            data: pspData.map(item => item.price),
+                            borderColor: '#E24A4A',
+                            backgroundColor: 'rgba(226, 74, 74, 0.2)',
+                            borderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 7,
+                            tension: 0.3
+                        }
+                    ]
                 },
                 options: {
                     responsive: true,
@@ -62,12 +121,19 @@
                     plugins: {
                         tooltip: {
                             callbacks: {
-                                // 客製化滑鼠移上去的提示框，讓它顯示 PTT 的完整標題
+                                // 判斷游標指到哪條線，顯示對應的完整標題
                                 title: function(context) {
-                                    return fullTitles[context[0].dataIndex];
+                                    const datasetIndex = context[0].datasetIndex;
+                                    const dataIndex = context[0].dataIndex;
+                                    if (datasetIndex === 0 && ndslTitles[dataIndex]) {
+                                        return ndslTitles[dataIndex];
+                                    } else if (datasetIndex === 1 && pspTitles[dataIndex]) {
+                                        return pspTitles[dataIndex];
+                                    }
+                                    return '無對應標題';
                                 },
                                 label: function(context) {
-                                    return `價格: $${context.raw}`;
+                                    return ` 價格: $${context.raw}`;
                                 }
                             }
                         }
@@ -75,10 +141,7 @@
                     scales: {
                         y: {
                             beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: '價格 (新台幣/元)'
-                            }
+                            title: { display: true, text: '價格 (新台幣/元)' }
                         }
                     }
                 }
@@ -86,7 +149,7 @@
         })
         .catch(error => {
             console.error('讀取資料失敗:', error);
-            document.getElementById('summary-text').innerHTML = '<span style="color:red;">讀取資料失敗，請確認 JSON 檔案是否存在。</span>';
+            document.getElementById('kpi-section').innerHTML = '<span style="color:red;">網頁發生錯誤，請確認 JSON 格式是否正確。</span>';
         });
 </script>
 
