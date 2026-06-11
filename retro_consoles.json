@@ -1,262 +1,82 @@
-{
-    "NDSL": [
-        {
-            "title": "[其他] 徵 NDSL 主機",
-            "price": 1105
-        },
-        {
-            "title": "[3DS ] 徵 NDSL (NDS Lite)主機 日版 美版",
-            "price": 1360
-        },
-        {
-            "title": "[其他] 徵 NDSL遊戲主機",
-            "price": 2276
-        },
-        {
-            "title": "[其他] 徵 NDSL遊戲主機",
-            "price": 1571
-        },
-        {
-            "title": "[其他] 徵 NDSL遊戲主機",
-            "price": 1820
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 1253
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 1697
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 2090
-        },
-        {
-            "title": "[其他] 徵 NDSL遊戲主機",
-            "price": 2388
-        },
-        {
-            "title": "[其他] 徵 NDSL遊戲主機",
-            "price": 1574
-        },
-        {
-            "title": "[其他] 徵 NDSL遊戲主機",
-            "price": 2370
-        },
-        {
-            "title": "[其他] 徵 NDSL遊戲主機",
-            "price": 2023
-        },
-        {
-            "title": "[NDS] 售 NDSL主機 贈兩片遊戲",
-            "price": 2184
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 1176
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 1538
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 2302
-        },
-        {
-            "title": "[其他] 徵NDSL 主機",
-            "price": 2292
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 1746
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 883
-        },
-        {
-            "title": "[其他] 售 NDSL、NS逆轉裁判4、5、6合輯",
-            "price": 2361
-        },
-        {
-            "title": "[其他] 徵 NDSL主機",
-            "price": 1407
-        },
-        {
-            "title": "[NDS ] 售二手玫瑰金ndsl主機",
-            "price": 1887
-        }
-    ],
-    "PSP": [
-        {
-            "title": "[NS  ] 售 PRO手把[PS5]沙漠大冒險/殼/手把/PSP",
-            "price": 1911
-        },
-        {
-            "title": "[NS  ] 售 PRO手把[PS5]沙漠大冒險/殼/手把/PSP",
-            "price": 2205
-        },
-        {
-            "title": "[NS  ] 售 PRO手把[PS5]沙漠大冒險/殼/手把/PSP",
-            "price": 1063
-        },
-        {
-            "title": "[NS  ] 售 PRO手把/動森卡[PS5]外殼/手把/PSP",
-            "price": 2945
-        },
-        {
-            "title": "[NS  ] 售 PRO手把/動森卡[PS5]外殼/手把/PSP",
-            "price": 2035
-        },
-        {
-            "title": "[psp] 徵 psp 死神靈魂嘉年華2",
-            "price": 1262
-        },
-        {
-            "title": "[PSP] 徵 閃電霹靂車",
-            "price": 2481
-        },
-        {
-            "title": "[PS5 ] 徵 PSPortal 台版黑色",
-            "price": 1771
-        },
-        {
-            "title": "[其他] 贈 PSP光碟約25片",
-            "price": 2120
-        },
-        {
-            "title": "[其他] 售 PSP 2000型、BACKBONE V2限量色",
-            "price": 2000
-        },
-        {
-            "title": "[其他] 徵 PSP 3007主機",
-            "price": 3007
-        },
-        {
-            "title": "[其他] 售 PSP 1007  CECHYA-0083 無線耳機",
-            "price": 1007
-        },
-        {
-            "title": "[其他] 徵 PSP 3000 主機 耀動藍",
-            "price": 3000
-        },
-        {
-            "title": "[其他] 徵 PSP GO",
-            "price": 2652
-        },
-        {
-            "title": "[PS5] 徵 PSPortal 黑 新竹",
-            "price": 2165
-        },
-        {
-            "title": "[PS5] 徵 PSP Portal (黑）",
-            "price": 1995
-        },
-        {
-            "title": "[PS5] 徵 PS5 Portal PSP (午夜黑）",
-            "price": 2481
-        },
-        {
-            "title": "[PS5 ] 徵 psp portal午夜黑or30th 林口",
-            "price": 1997
-        },
-        {
-            "title": "[PS5 ] 售 PSVR2+PC轉接 / PSPortal / 多媒體遙控器",
-            "price": 1439
-        },
-        {
-            "title": "[其他] 贈 PSP魔物獵人光碟（已贈出）",
-            "price": 1261
-        },
-        {
-            "title": "[其他] 售 PSP/PS2/PS3/NDS多種遊戲",
-            "price": 1004
-        },
-        {
-            "title": "[PS5] 徵 PS5 標準版 、 PSP300型",
-            "price": 300
-        },
-        {
-            "title": "[其他] 徵求 PSP 各色主機（2、3000型）",
-            "price": 3000
-        },
-        {
-            "title": "[其他] 徵 PSP主機",
-            "price": 1809
-        },
-        {
-            "title": "[PS5 ] 售 TOPSPIN 2K25網球大聯盟",
-            "price": 1659
-        },
-        {
-            "title": "[其他] 售 PSP MLB the show10",
-            "price": 2362
-        },
-        {
-            "title": "[其他] 贈 PSP 第2次超級機器人大戰Z再世篇",
-            "price": 1303
-        },
-        {
-            "title": "[其他] 售PSP & NDS",
-            "price": 2116
-        },
-        {
-            "title": "[其他] 售 psp3007白色主機（暫售）",
-            "price": 3007
-        },
-        {
-            "title": "[其他] 贈 全贈出 PS4手把盒子/ PSP薄荷綠/ 其他",
-            "price": 1166
-        },
-        {
-            "title": "[其他] 徵 PSP 戰神",
-            "price": 1866
-        },
-        {
-            "title": "[其他] 徵 PSP 戰神",
-            "price": 2647
-        },
-        {
-            "title": "[其他] 徵 PSP 戰神",
-            "price": 2605
-        },
-        {
-            "title": "[其他] 售 PSP 多款遊戲",
-            "price": 1117
-        },
-        {
-            "title": "[NS] 售 NS織夢島 PS3/PSP遊戲",
-            "price": 1453
-        },
-        {
-            "title": "[其他] 徵 PSP 戰神",
-            "price": 1625
-        },
-        {
-            "title": "[其他] 徵 PSP 戰神",
-            "price": 2105
-        },
-        {
-            "title": "[其他] 徵 PSP 戰神",
-            "price": 1773
-        },
-        {
-            "title": "[PSP ] 售八成新2000薄荷綠後期機",
-            "price": 2000
-        },
-        {
-            "title": "[PSP ] 賣psp(厚)in台北",
-            "price": 1185
-        },
-        {
-            "title": "[PSP ] 黑色日製psp一台",
-            "price": 1811
-        },
-        {
-            "title": "[PSP ] 推薦一個二手交流網站",
-            "price": 1304
-        }
-    ]
-}
+[
+    {
+        "title": "[其他] 售 NDSL遊戲主機(售出)",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL 主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL 主機 日版美版(已徵到)",
+        "price": "未標價"
+    },
+    {
+        "title": "[3DS ] 徵 NDSL (NDS Lite)主機 日版 美版",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL遊戲主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL遊戲主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL遊戲主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL遊戲主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL主機 (已徵到)",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL遊戲主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL遊戲主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL遊戲主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[NDS] 售 NDSL主機 贈兩片遊戲",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他]售 NDSL 極新完整盒裝配件 (已售出)",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL主機",
+        "price": "未標價"
+    },
+    {
+        "title": "[其他] 徵 NDSL主機",
+        "price": "未標價"
+    }
+]
