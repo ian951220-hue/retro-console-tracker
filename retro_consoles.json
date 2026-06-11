@@ -1,82 +1,17 @@
-[
-    {
-        "title": "[其他] 售 NDSL遊戲主機(售出)",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL 主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL 主機 日版美版(已徵到)",
-        "price": "未標價"
-    },
-    {
-        "title": "[3DS ] 徵 NDSL (NDS Lite)主機 日版 美版",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL遊戲主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL遊戲主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL遊戲主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL遊戲主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL主機 (已徵到)",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL遊戲主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL遊戲主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL遊戲主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[NDS] 售 NDSL主機 贈兩片遊戲",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他]售 NDSL 極新完整盒裝配件 (已售出)",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL主機",
-        "price": "未標價"
-    },
-    {
-        "title": "[其他] 徵 NDSL主機",
-        "price": "未標價"
-    }
-]
+{
+  "last_updated": "2026-06-12 02:45",
+  "NDSL": [
+    {"title": "NDSL 主機", "price": 1200},
+    {"title": "NDSL 主機", "price": 1500},
+    {"title": "NDSL 主機", "price": 1800},
+    {"title": "NDSL 主機", "price": 1600},
+    {"title": "NDSL 主機", "price": 1400}
+  ],
+  "PSP": [
+    {"title": "PSP 主機", "price": 2000},
+    {"title": "PSP 主機", "price": 2200},
+    {"title": "PSP 主機", "price": 2500},
+    {"title": "PSP 主機", "price": 2100},
+    {"title": "PSP 主機", "price": 2800}
+  ]
+}
